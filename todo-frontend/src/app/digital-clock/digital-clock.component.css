@@ -1,0 +1,18 @@
+.digitalClock {
+  display: flex;
+margin: 2% auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+width: fit-content;
+padding:1.4em 3em;
+  border: 1px solid grey;
+}
+
+.digitalClock .digitalTime{
+    display: flex;
+}
+
+.digitalClock .digitalTime div{
+    margin: auto ;
+}

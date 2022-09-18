@@ -1,0 +1,27 @@
+.menuData {
+  /* border: 1px solid red; */
+  width: 100vw;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 5rem auto 2fr auto 5rem;
+  margin-top:auto;
+  /* flex-direction: row-reverse; */
+
+}
+
+.menuData .menuData_Item a i {
+  color: #ffff;
+  border: 2px solid #6c00f7;
+  padding: 1em;
+  font-size: 1.2em;
+  background: #6c00f7;
+  border-radius: 50%;
+}
+.menuData .complete_Item{
+  grid-column: 2/3;
+}
+.menuData .add_Item {
+  margin-left: auto;
+  grid-column: 4/5;
+}

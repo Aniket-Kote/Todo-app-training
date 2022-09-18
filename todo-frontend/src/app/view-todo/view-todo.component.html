@@ -1,0 +1,21 @@
+<h3>Todo Details {{todo.todo_title}}</h3>
+
+<div>
+    
+    <div>
+
+        <label for="">
+            <b>Todo Title : </b>{{todo.todo_title}}
+        </label>
+    </div>
+
+    <div>
+
+        <label for="">
+            <b>Todo Description : </b>{{todo.todo_desc}}
+        </label>
+    </div>
+
+    <button class="btn btn-danger my-5 "
+    (click)="deleteTodo(todo.todo_id)">Delete</button>
+</div>

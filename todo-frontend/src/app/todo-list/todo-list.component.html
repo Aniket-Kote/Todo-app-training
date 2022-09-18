@@ -1,0 +1,50 @@
+<!--  <p>todo-list works!</p> -->
+
+
+<div class="row   searchCombined ">
+    <div class="col ">
+        <div class="search ">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" name="" id="searchTodo" placeholder="Search here"
+                class="form-control" [(ngModel)]="SearchText">
+        </div>
+
+    </div>
+
+    <div class="col">
+        <p class="text-center h5 totalTodo">Total ToDo : <span class="totalTodo_item">{{totalLength}} Todos</span></p>
+
+    </div>
+</div>
+
+
+
+
+<div class="todo_cardGroup container">
+
+
+
+    <div class="todo_card" *ngFor="let todo of todos |
+        filter :
+        SearchText | paginate: { itemsPerPage: 6, currentPage: page
+        ,totalItems:totalLength }">
+        <div class="todo_cardInner">
+            <div class="todo_cardTitile h4">{{todo.todo_title}}</div>
+            <div class="todo_cardDesc text-truncate" style="max-width: 200px;">{{todo.todo_desc}}</div>
+            <div class="todo_cardActions">
+                <i class="fa-solid
+                    fa-check-double" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark As Done" (click)="todoDone(todo.todo_id)"></i>
+                <i class="fa-solid fa-eye" data-bs-toggle="tooltip" data-bs-placement="top" title="View Todo" (click)="viewTodo(todo.todo_id)"></i>
+                <i class="fa-solid fa-pen-to-square" data-bs-toggle="tooltip" data-bs-placement="top" title="Update ToDo"
+                    (click)="updateTodo(todo.todo_id)"></i>
+                <span class="text-danger"
+                    (click)="deleteTodo(todo.todo_id)"><b>Delete</b></span>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<pagination-controls (pageChange)="page= $event" class="text-center
+    my-pagination"></pagination-controls>
